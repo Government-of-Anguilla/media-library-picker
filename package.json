@@ -1,0 +1,25 @@
+{
+  "name": "media-library-picker",
+  "version": "1.0.0",
+  "description": "Media Library Picker is a modern, lightweight file management interface built with vanilla JavaScript principles in mind.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Government-of-Anguilla/media-library-picker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Government-of-Anguilla/media-library-picker/issues"
+  },
+  "homepage": "https://github.com/Government-of-Anguilla/media-library-picker#readme",
+  "devDependencies": {
+    "terser": "^5.51.2"
+  }
+}
