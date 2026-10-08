@@ -544,7 +544,7 @@
 .mlp-prop-row {
 	display: flex;
 	align-items: baseline;
-	justify-content: space-between;
+	gap: 10px;
 	padding: 7px 0;
 	font-size: 13px;
 	border-bottom: 1px solid var(--mlp-border-soft);
@@ -555,13 +555,20 @@
 }
 
 .mlp-prop-label {
+	flex: 0 0 calc(40% - 5px);
+	min-width: 0;
 	color: var(--mlp-muted);
+	word-break: break-word;
 }
 
 .mlp-prop-value {
+	flex: 0 0 calc(60% - 5px);
+	min-width: 0;
 	color: var(--mlp-ink);
 	text-align: right;
 	font-variant-numeric: tabular-nums;
+	word-break: break-word;
+	overflow-wrap: anywhere;
 }
 
 .mlp-sidebar-actions {
