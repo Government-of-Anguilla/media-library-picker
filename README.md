@@ -2,6 +2,8 @@
 
 Media Library Picker is a modern, lightweight file management interface built with vanilla JavaScript principles in mind. No frameworks, no build step required to use it.
 
+![Media Library Picker](screen-1.png)
+
 The plugin consists of:
 
 - `src/media-library.css` — stylesheet
