@@ -43,31 +43,32 @@
 	}
 
 	/* ------------------------------------------------------------- icons */
+	const STROKE = '1.75';
 	const ICONS = {
 		search:
-			'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+			'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
 		upload:
-			'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>',
+			'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>',
 		sidebarToggle:
-			'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="14" y1="4" x2="14" y2="20"/></svg>',
-		grid: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
-		list: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>',
+			'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="14" y1="4" x2="14" y2="20"/></svg>',
+		grid: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
+		list: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>',
 		close:
-			'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>',
+			'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>',
 		check:
-			'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
-		info: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+			'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+		info: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
 		versions:
-			'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h11a3 3 0 0 1 3 3v8"/><path d="M4 17h11a3 3 0 0 0 3-3V6"/></svg>',
+			'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '"><path d="M4 7h11a3 3 0 0 1 3 3v8"/><path d="M4 17h11a3 3 0 0 0 3-3V6"/></svg>',
 		image:
-			'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>',
+			'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>',
 		video:
-			'<svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><polygon points="10,9 16,12 10,15"/></svg>',
+			'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '"><rect x="2" y="5" width="20" height="14" rx="2"/><polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/></svg>',
 		audio:
-			'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+			'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
 		pdf: '<svg width="32" height="32" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="#e0342c"/><text x="12" y="15.5" font-size="7.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="Arial, sans-serif">PDF</text></svg>',
-		doc: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1e2a4a" stroke-width="1.6"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><line x1="9.5" y1="12" x2="14.5" y2="12"/><line x1="9.5" y1="15.5" x2="14.5" y2="15.5"/></svg>',
-		file: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg>',
+		doc: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1e2a4a" stroke-width="' + STROKE + '"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><line x1="9.5" y1="12" x2="14.5" y2="12"/><line x1="9.5" y1="15.5" x2="14.5" y2="15.5"/></svg>',
+		file: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg>',
 	};
 
 	function iconFor(category, mime) {
@@ -112,6 +113,7 @@
 			this.isOpen = true;
 			document.body.appendChild(this.overlay);
 			requestAnimationFrame(() => this.overlay.classList.add('mlp-open'));
+			this._applySidebarCollapsed(this._isNarrowViewport());
 			this.core.fetchItems();
 			this._fire('onOpen');
 			setTimeout(() => this.searchInput.focus(), 50);
@@ -223,13 +225,13 @@
 			this.uploadBtn = el(
 				'button',
 				{ type: 'button', className: 'mlp-btn mlp-btn-primary', onclick: () => this.fileInput.click() },
-				[this._iconNode(ICONS.upload), 'Upload']
+				[this._iconNode(ICONS.upload), el('span', { className: 'mlp-btn-label' }, ['Upload'])]
 			);
 
-			this.sidebarToggleBtn = this._iconButton(ICONS.sidebarToggle, () => this._toggleSidebar());
-			this.gridViewBtn = this._iconButton(ICONS.grid, () => this._setView('grid'));
-			this.listViewBtn = this._iconButton(ICONS.list, () => this._setView('list'));
-			this.closeBtn = this._iconButton(ICONS.close, () => this.close());
+			this.sidebarToggleBtn = this._iconButton(ICONS.sidebarToggle, () => this._toggleSidebar(), 'Toggle details panel');
+			this.gridViewBtn = this._iconButton(ICONS.grid, () => this._setView('grid'), 'Grid view');
+			this.listViewBtn = this._iconButton(ICONS.list, () => this._setView('list'), 'List view');
+			this.closeBtn = this._iconButton(ICONS.close, () => this.close(), 'Close');
 
 			const headerActions = el('div', { className: 'mlp-header-actions' }, [
 				this.uploadBtn,
@@ -243,7 +245,11 @@
 
 			this.header = el('div', { className: 'mlp-header' }, [searchBox, this.tabsWrap, headerActions]);
 
-			this.gridEl = el('div', { className: 'mlp-grid' });
+			this.gridEl = el('div', {
+				className: 'mlp-grid',
+				role: 'listbox',
+				'aria-multiselectable': String(!!this.options.multiple),
+			});
 			this.gridWrap = el('div', { className: 'mlp-grid-wrap' }, [this.gridEl]);
 
 			this.uploadBar = el('div', { className: 'mlp-upload-bar', style: 'display:none;' });
@@ -296,10 +302,16 @@
 			return span;
 		}
 
-		_iconButton(svg, onClick) {
-			return el('button', { type: 'button', className: 'mlp-icon-btn', onclick: onClick }, [
-				this._iconNode(svg),
-			]);
+		_iconButton(svg, onClick, label) {
+			return el(
+				'button',
+				{ type: 'button', className: 'mlp-icon-btn', 'aria-label': label, onclick: onClick },
+				[this._iconNode(svg)]
+			);
+		}
+
+		_isNarrowViewport() {
+			return typeof global.matchMedia === 'function' && global.matchMedia('(max-width: 760px)').matches;
 		}
 
 		/* ------------------------------------------------------- filters */
@@ -343,13 +355,20 @@
 
 		_updateViewButtons() {
 			this.gridViewBtn.classList.toggle('mlp-active', this.view === 'grid');
+			this.gridViewBtn.setAttribute('aria-pressed', String(this.view === 'grid'));
 			this.listViewBtn.classList.toggle('mlp-active', this.view === 'list');
+			this.listViewBtn.setAttribute('aria-pressed', String(this.view === 'list'));
 		}
 
 		_toggleSidebar() {
-			this.sidebarCollapsed = !this.sidebarCollapsed;
-			this.sidebar.style.display = this.sidebarCollapsed ? 'none' : '';
-			this.sidebarToggleBtn.classList.toggle('mlp-active', this.sidebarCollapsed);
+			this._applySidebarCollapsed(!this.sidebarCollapsed);
+		}
+
+		_applySidebarCollapsed(collapsed) {
+			this.sidebarCollapsed = collapsed;
+			this.sidebar.classList.toggle('mlp-sidebar-collapsed', collapsed);
+			this.sidebarToggleBtn.classList.toggle('mlp-active', collapsed);
+			this.sidebarToggleBtn.setAttribute('aria-pressed', String(collapsed));
 		}
 
 		_setDetailTab(tab) {
@@ -409,7 +428,15 @@
 
 			const tile = el(
 				'div',
-				{ className: 'mlp-tile' + (selected ? ' mlp-selected' : ''), onclick: (e) => this._handleItemClick(item, e) },
+				{
+					className: 'mlp-tile' + (selected ? ' mlp-selected' : ''),
+					role: 'option',
+					'aria-selected': String(selected),
+					'aria-label': item.name,
+					tabindex: '0',
+					onclick: (e) => this._handleItemClick(item, e),
+					onkeydown: (e) => this._handleItemKeydown(item, e),
+				},
 				children
 			);
 			return tile;
@@ -427,7 +454,11 @@
 				'div',
 				{
 					className: 'mlp-list-row' + (selected ? ' mlp-selected' : ''),
+					role: 'option',
+					'aria-selected': String(selected),
+					tabindex: '0',
 					onclick: (e) => this._handleItemClick(item, e),
+					onkeydown: (e) => this._handleItemKeydown(item, e),
 				},
 				[
 					thumb,
@@ -440,7 +471,18 @@
 		_handleItemClick(item, e) {
 			this.core.select(item.id, { additive: e.metaKey || e.ctrlKey });
 			this._renderItems();
-			this._fire('onSelect', this.core.selectedItems());
+			const selected = this.core.selectedItems();
+			if (selected.length && this.sidebarCollapsed && this._isNarrowViewport()) {
+				this._applySidebarCollapsed(false);
+			}
+			this._fire('onSelect', selected);
+		}
+
+		_handleItemKeydown(item, e) {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				this._handleItemClick(item, e);
+			}
 		}
 
 		/* ------------------------------------------------------- sidebar */

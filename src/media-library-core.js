@@ -213,10 +213,13 @@
 		/* ---------------- selection -------------------------------------- */
 		select(id, opts) {
 			const additive = opts && opts.additive && this.options.multiple;
+			const isOnlySelected = this.state.selectedIds.length === 1 && this.state.selectedIds[0] === id;
 			if (additive) {
 				const idx = this.state.selectedIds.indexOf(id);
 				if (idx > -1) this.state.selectedIds.splice(idx, 1);
 				else this.state.selectedIds.push(id);
+			} else if (isOnlySelected) {
+				this.state.selectedIds = [];
 			} else {
 				this.state.selectedIds = [id];
 			}
