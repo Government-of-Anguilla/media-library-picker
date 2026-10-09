@@ -68,6 +68,70 @@ With no `endpoints.list` configured, the widget runs against a small built-in de
 
 Files can also be dropped directly onto the picker window to upload them.
 
+## Using the headless core directly
+
+`media-library-core.js` has no DOM/UI code — it only talks to your API, tracks state, and emits events. Use it on its own when you want to build your own picker UI, a media display/gallery page, or integrate into a framework (React, Vue, etc.) instead of the built-in popup.
+
+```html
+<script src="src/media-library-core.js"></script>
+
+<script>
+	const core = new MediaLibraryCore({
+		endpoints: {
+			list: '/api/media',
+			upload: '/api/media/upload',
+			delete: '/api/media/:id',
+		},
+	});
+
+	// React to state changes and render however you like.
+	core.on('items', (items) => renderGrid(items));
+	core.on('selection', (items) => console.log('selected', items));
+	core.on('upload:progress', (record) => console.log(record.name, record.progress));
+	core.on('error', (err) => console.error(err));
+
+	// Load the list.
+	core.fetchItems();
+
+	function renderGrid(items) {
+		document.getElementById('grid').innerHTML = items
+			.map((item) => `<div>${item.name} (${core.formatBytes(item.size)})</div>`)
+			.join('');
+	}
+
+	// Upload file(s) from an <input type="file"> or drop event.
+	document.getElementById('file-input').addEventListener('change', (e) => {
+		core.uploadFiles(e.target.files);
+	});
+
+	// Select / delete by id.
+	core.select('demo-1');
+	core.deleteItem('demo-1');
+</script>
+```
+
+With no `endpoints.list` configured, `fetchItems()` resolves against the same built-in demo dataset the full picker uses, so you can build/test a custom UI without a backend.
+
+### Core API
+
+| Method | Description |
+| --- | --- |
+| `fetchItems({ filter, search })` | Loads items from `endpoints.list` (or demo data). Updates `state.items` and emits `loading` / `items` / `error`. |
+| `fetchDetail(id)` | Loads a single item from `endpoints.detail`, or falls back to the already-loaded item. |
+| `uploadFiles(fileList)` | Uploads one or more files to `endpoints.upload` via `XMLHttpRequest`. Returns upload records; emits `upload:start`, `upload:progress`, `upload:complete`/`upload:error`, `uploads`. |
+| `cancelUpload(uploadId)` | Aborts an in-progress upload. |
+| `deleteItem(id)` | Deletes via `endpoints.delete`, removes it from state, emits `items` / `selection` / `delete`. |
+| `select(id, { additive })` | Toggles selection; `additive: true` (with `multiple: true`) adds/removes instead of replacing. |
+| `clearSelection()` | Clears `state.selectedIds`. |
+| `selectedItems()` | Returns the currently selected item objects. |
+| `categoryFromMime(mime)` / `formatBytes(bytes)` | Formatting helpers used internally, safe to reuse in your own UI. |
+
+### Events
+
+`loading`, `items`, `error`, `selection`, `upload:start`, `upload:progress`, `upload:complete`, `upload:error`, `upload:cancel`, `uploads`, `delete`.
+
+So yes — fetching the list, uploading, and deleting are all exposed directly on `MediaLibraryCore`, independent of the bundled picker UI.
+
 ## Development
 
 ```sh
