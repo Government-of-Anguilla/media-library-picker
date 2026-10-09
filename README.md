@@ -94,21 +94,33 @@ Files can also be dropped directly onto the picker window to upload them.
 	core.fetchItems();
 
 	function renderGrid(items) {
-		document.getElementById('grid').innerHTML = items
-			.map((item) => `<div>${item.name} (${core.formatBytes(item.size)})</div>`)
+		const grid = document.getElementById('grid');
+		grid.innerHTML = items
+			.map((item) => `<div class="item" data-id="${item.id}">${item.name} (${core.formatBytes(item.size)})</div>`)
 			.join('');
 	}
+
+	// Delegate clicks on the rendered grid back to the core, passing the
+	// item's data id (item.id) — NOT a DOM element id.
+	document.getElementById('grid').addEventListener('click', (e) => {
+		const el = e.target.closest('.item');
+		if (!el) return;
+		core.select(el.dataset.id, { additive: e.metaKey || e.ctrlKey });
+	});
 
 	// Upload file(s) from an <input type="file"> or drop event.
 	document.getElementById('file-input').addEventListener('change', (e) => {
 		core.uploadFiles(e.target.files);
 	});
 
-	// Select / delete by id.
-	core.select('demo-1');
-	core.deleteItem('demo-1');
+	// Delete uses the same item.id, e.g. from a delete button inside the item:
+	// core.deleteItem(item.id);
 </script>
 ```
+
+`core.select(id)` / `core.deleteItem(id)` always take the item's `id` field from the data (`item.id`), never an HTML element id — the core has no knowledge of your DOM. The usual pattern is to stash `item.id` on each rendered element (e.g. a `data-id` attribute, as above) and read it back in your click handler, as shown with the delegated listener on `#grid`.
+
+Selection state lives on the core (`state.selectedIds`), not in the DOM — after calling `core.select()`, use the `selection` event (or `core.selectedItems()`) to re-render which elements look "selected" (e.g. toggle a CSS class), rather than tracking it separately in your markup.
 
 With no `endpoints.list` configured, `fetchItems()` resolves against the same built-in demo dataset the full picker uses, so you can build/test a custom UI without a backend.
 
